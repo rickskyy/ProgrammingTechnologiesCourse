@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="DeviceNS"
+        xmlns="DeviceNS"
+        elementFormDefault="qualified">
+
+    <xs:element name="Device">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="devices">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="device" type="device" minOccurs="1" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="origin">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="price">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/> 
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="isCritical">
+        <xs:restriction base="xs:boolean"/>
+    </xs:simpleType>
+	
+	<xs:simpleType name="isPeripheral">
+        <xs:restriction base="xs:boolean"/>
+    </xs:simpleType>
+	
+    <xs:simpleType name="energyConsumption">
+        <xs:restriction base="xs:int"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="hasCooler">
+        <xs:restriction base="xs:boolean"/>
+    </xs:simpleType>
+
+	<xs:simpleType name="deviceGroup">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="IO"/>
+            <xs:enumeration value="media"/>
+        </xs:restriction> 
+    </xs:simpleType>
+
+    <xs:simpleType name="port">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="COM"/>
+            <xs:enumeration value="USB"/>
+            <xs:enumeration value="LPT"/>
+        </xs:restriction> 
+    </xs:simpleType>
+	
+    <xs:complexType name="device">
+        <xs:sequence>
+			<xs:element name="deviceID" type="xs:int"/>
+			<xs:element name="name" type="name"></xs:element>
+			<xs:element name="origin" type="origin"></xs:element>
+            <xs:element name="price" type="price"></xs:element>
+            <xs:element name="critical" type="isCritical"></xs:element>
+            <xs:element name="deviceType">
+                <xs:complexType >
+                    <xs:sequence>
+                        <xs:element name="isPeripheral" type="isPeripheral"></xs:element>
+                        <xs:element name="energyConsumption" type="energyConsumption"></xs:element>
+                        <xs:element name="hasCooler" type="hasCooler"></xs:element>
+                        <xs:element name="deviceGroup" type="deviceGroup"></xs:element>
+						<xs:element name="port" type="port"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

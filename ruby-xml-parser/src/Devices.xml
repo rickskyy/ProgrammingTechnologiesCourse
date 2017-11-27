@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Device xmlns="DeviceNS"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="DeviceNS Device.xsd">
+	<devices>
+		<device>
+			<deviceID>1</deviceID>
+			<name>mouse</name>
+			<origin>China</origin>
+			<price>5</price>
+			<critical>false</critical>
+			<deviceType>
+				<isPeripheral>true</isPeripheral>
+				<energyConsumption>10</energyConsumption>
+				<hasCooler>false</hasCooler>
+				<deviceGroup>IO</deviceGroup>
+				<port>USB</port>
+			</deviceType>
+		</device>
+
+		<device>
+			<deviceID>2</deviceID>
+			<name>Aperion speakers</name>
+			<origin>China</origin>
+			<price>400</price>
+			<critical>false</critical>
+			<deviceType>
+				<isPeripheral>true</isPeripheral>
+				<energyConsumption>500</energyConsumption>
+				<hasCooler>false</hasCooler>
+				<deviceGroup>media</deviceGroup>
+				<port>USB</port>
+			</deviceType>
+		</device>
+
+
+		<device>
+			<deviceID>3</deviceID>
+			<name>Asus Prime Z270-P motherboard</name>
+			<origin>China</origin>
+			<price>150</price>
+			<critical>true</critical>
+			<deviceType>
+				<isPeripheral>false</isPeripheral>
+				<energyConsumption>50</energyConsumption>
+				<hasCooler>true</hasCooler>
+				<deviceGroup>media</deviceGroup>
+				<port>USB</port>
+			</deviceType>
+		</device>
+
+	</devices>
+</Device>
